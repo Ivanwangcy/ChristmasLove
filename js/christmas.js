@@ -9,15 +9,34 @@ var handleSize = function(){
 window.addEventListener(resizeEvent, handleSize, false);
 document.addEventListener('DOMContentLoaded', handleSize, false);
 
+var changePage = function (page, effect, callback) {
+  page.addClass(effect).
+  one("animationend webkitAnimationEnd", function(){
+    callback();
+  });
+};
 /**
 * 下拉选择页面
 */
-var page = document.querySelector('#page');
 // 层级
 // var index = 10;
-var currentPage = $(".page-a");
+var $pageA = $(".page-a");
+var $pageB = $(".page-b");
+var $pageC = $(".page-c");
 
-page.addEventListener('change', function(e) {
-currentPage.addClass("effect-out").removeClass('effect-in');
-currentPage = $("." + e.target.value).removeClass("effect-out").addClass('effect-in');
-},false);
+$('#choose').on('change', function(e) {
+  var pageName = e.target.value;
+  switch (pageName) {
+    case "page-b":
+      changePage($pageA, "effect-out", function(){
+        new PageB();
+      });
+      break;
+      case "page-c":
+        changePage($pageC, "effect-in", function(){
+          new PageC();
+        });
+        break;
+    default:;
+  }
+});

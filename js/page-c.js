@@ -1,3 +1,3 @@
-var pageC = function() {
+var PageC = function() {
   alert("c");
 }

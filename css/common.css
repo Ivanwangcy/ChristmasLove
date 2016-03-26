@@ -31,15 +31,20 @@
   z-index: 3;
 }
 
-.effect-out {
+.container .effect-out {
+  -webkit-animation: effectOut 8s ease-in-out forwards;
+  -webkit-transform-origin: 71% 72%;
   animation: effectOut 8s ease-in-out forwards;
-  transform-origin: 71% 73%;
+  transform-origin: 71% 72%;
 }
 
-.deffect-in {
+.container .effect-in {
   z-index: 15;
-  opacity: 0;
   display: block;
+  opacity: 0;
+  -webkit-transform: scale(8);
+  -webkit-animation: effectIn 5s ease-in-out forwards;
+  -webkit-transform-origin: 58% 73%;
   transform: scale(8);
   animation: effectIn 5s ease-in-out forwards;
   transform-origin: 58% 73%;
@@ -56,6 +61,6 @@
 @keyframes effectIn {
   100% {
     transform: scale(1);
-    opacity: 0;
+    opacity: 1;
   }
 }

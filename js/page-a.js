@@ -1,3 +1,3 @@
-var pageA = function(){
+var PageA = function(){
   alert("a");
 }
