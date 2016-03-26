@@ -35,6 +35,17 @@
       }
       window.addEventListener(resizeEvent, handleSize, false);
       document.addEventListener('DOMContentLoaded', handleSize, false);
+
+    /**
+     * 下拉选择页面
+     */
+    var page = document.querySelector('#page');
+    // 层级
+    var index = 10;
+    page.addEventListener('change', function(e) {
+      var pageElement = document.querySelector("." + e.target.value)
+      pageElement.style.zIndex = ++index;
+    },false);
     </script>
   </body>
 </html>
