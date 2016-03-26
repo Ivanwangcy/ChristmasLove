@@ -15,6 +15,16 @@ var changePage = function (page, effect, callback) {
     callback();
   });
 };
+
+var HTML5Audio = function(url, loop){
+  var audio = new Audio(url);
+  audio.autoplay = true;
+  audio.loop = loop || false;
+
+  audio.addEventListener("ended", function(){
+    alert("播放结束");
+  })
+}
 /**
 * 下拉选择页面
 */
@@ -58,7 +68,13 @@ var Christmas = function(){
 };
 
 $(function(){
-  $("button").on('click',function(){
+  $("#animationplay").on('click',function(){
     Christmas();
-  })
+  });
+  $("#audioplay").on("click", function(){
+    HTML5Audio("music/scene.mp3");
+  });
+  $("#audioplayloop").on("click", function(){
+    HTML5Audio("music/circulation.mp3", true);
+  });
 });
