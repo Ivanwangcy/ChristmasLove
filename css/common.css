@@ -30,3 +30,32 @@
   position: absolute;
   z-index: 3;
 }
+
+.effect-out {
+  animation: effectOut 8s ease-in-out forwards;
+  transform-origin: 71% 73%;
+}
+
+.deffect-in {
+  z-index: 15;
+  opacity: 0;
+  display: block;
+  transform: scale(8);
+  animation: effectIn 5s ease-in-out forwards;
+  transform-origin: 58% 73%;
+}
+
+@keyframes effectOut{
+  0% {opacity: 1;}
+  100% {
+    transform: scale(20);
+    opacity: 0;
+  }
+}
+
+@keyframes effectIn {
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
