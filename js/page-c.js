@@ -1,3 +1,3 @@
 var PageC = function() {
-  alert("c");
+  alert("动画结束");
 }

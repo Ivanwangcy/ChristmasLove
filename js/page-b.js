@@ -1,3 +1,5 @@
-var PageB = function() {
-  alert("b");
+var PageB = function(callback) {
+  setTimeout(function(){
+    callback()
+  }, 200);
 }
